@@ -1,0 +1,17 @@
+// out: ../../css/style.css
+
+/* include bootstrap mixin less */
+// Load core mixins and variables from bootstrap
+// NOTE: Do not use the .bg-variant() and .text-emphasis-variant() mixin
+// Details here: https://github.com/twbs/bootstrap/issues/15038
+// Although you can use it with a dirty hack :P
+// ---------------------------------------------------------------------
+@import "../../bower_components/bootstrap/less/variables.less";
+@import "../../bower_components/bootstrap/less/mixins.less";
+
+/* project specific variables */
+@import "variables.less";
+
+body{
+	background-color: @body-background;	
+}
