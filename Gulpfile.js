@@ -13,19 +13,8 @@ gulp.task('fileinclude', function () {
 		.pipe(gulp.dest('./'));
 });
 
-gulp.task('less', function () {
-	gulp.src('./source/less/style.less')
-		.pipe(less({
-			paths: [path.join(__dirname, 'less', 'includes')]
-		}))
-		.pipe(gulp.dest('./css'));
-});
-
-gulp.task('watch', function () {
-	watch('./source/html/**/*.html', function () {
+gulp.task('watch-html', function () {
+	watch('./source/html/**/*.html', function(){
 		gulp.start('fileinclude');
-	});
-	watch('./source/less/**/*.less', function () {
-		gulp.start('less');
 	});
 });
